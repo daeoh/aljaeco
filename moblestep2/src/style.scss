@@ -1,0 +1,580 @@
+$lightGreen: #b9e7e7;
+$default-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $default-font;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 1024px;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    // LOGIN & REGISTER
+    .auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: $lightGreen;
+
+      h1 {
+        font-size: 20px;
+        color: teal;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: white;
+        width: 300px;
+        gap: 20px;
+
+        input {
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid gray;
+        }
+
+        .input-with-button {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+
+        button {
+          padding: 10px;
+          border: none;
+          background-color: teal;
+          cursor: pointer;
+          color: white;
+        }
+        //progressbar
+        #progress {
+          appearance: none;
+        }
+        #progress::-webkit-progress-bar {
+          background: #f0f0f0;
+          border-radius: 10px;
+          box-shadow: inset 3px 3px 10px #ccc;
+        }
+        #progress::-webkit-progress-value {
+          border-radius: 10px;
+          background: #1d976c;
+          background: -webkit-l inear-gradient(to right, #93f9b9, #1d976c);
+          background: linear-gradient(to right, #93f9b9, #1d976c);
+        }
+
+        p {
+          font-size: 12px;
+          color: red;
+        }
+
+        span {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+    //신규강의,인기강의
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .course-card img {
+      max-width: 100%;
+      height: auto;
+    }
+    .course-card a {
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+    }
+
+    // Profile 컴포넌트의 CSS 부분
+    .infonav {
+      width: 200px; // 왼쪽 네비게이션 메뉴의 폭을 지정
+      float: left;
+    }
+
+    .infoview {
+      margin-left: 220px; // 왼쪽 네비게이션 메뉴 폭 + 여백 만큼 오른쪽으로 이동
+    }
+
+    // NAVBAR
+    .navbar {
+      .container {
+        padding: 10px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+          img {
+            width: 120px;
+          }
+        }
+
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          h6 {
+            font-size: 16px;
+            font-weight: 300;
+          }
+
+          span {
+            cursor: pointer;
+          }
+
+          .write {
+            background-color: $lightGreen;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 300;
+            border: 1px solid white;
+
+            &:hover {
+              color: teal;
+              background-color: white;
+              border: 1px solid teal;
+            }
+          }
+        }
+
+        .LinkList {
+          display: flex;
+        }
+      }
+    }
+    .search {
+      position: relative;
+      width: 200px;
+
+      input {
+        width: 100%;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-size: 14px;
+
+        img {
+          position: absolute;
+          width: 17px;
+          top: 10px;
+          right: 12px;
+          margin: 0;
+        }
+      }
+    }
+    //ForgotPassWord
+    .auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: lightgreen; // 실제 색상 값으로 변경
+      h1 {
+        font-size: 20px;
+        color: teal;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: white;
+        width: 200px;
+        gap: 20px;
+        label {
+          font-size: 14px;
+          color: teal;
+          margin-bottom: 5px;
+        }
+        input {
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid gray;
+        }
+        button {
+          padding: 10px;
+          border: none;
+          background-color: teal;
+          cursor: pointer;
+          color: white;
+        }
+        p {
+          font-size: 12px;
+          color: red;
+        }
+        span {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+    //ForgotEmail
+    .forgot-email {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* 예시 배경색 */
+      h1 {
+        font-size: 24px;
+        color: #333; /* 예시 텍스트 색상 */
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 16px;
+        color: #666; /* 예시 텍스트 색상 */
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        label {
+          font-size: 16px;
+          color: #333; /* 예시 텍스트 색상 */
+          margin-bottom: 8px;
+        }
+        input {
+          padding: 10px;
+          margin-bottom: 16px;
+          width: 300px;
+          border: 1px solid #ccc; /* 예시 테두리 색상 */
+          border-radius: 4px;
+          font-size: 16px;
+        }
+        button {
+          padding: 12px 20px;
+          background-color: #007bff; /* 예시 버튼 배경색 */
+          color: #fff; /* 예시 버튼 텍스트 색상 */
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+          &:hover {
+            background-color: #0056b3; /* 예시 버튼 호버 배경색 */
+          }
+        }
+      }
+    }
+    //로그인화면 회원가입 이메일 비밀번호 찾기 속성
+    .links-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .links-container span {
+      margin-right: 10px;
+    }
+    .sidebar {
+      width: 100px;
+      height: 90vh;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(0%); /* 변경된 부분: -110%로 이동 */
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .close-button {
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .menu-list {
+      list-style: none;
+      padding: 0;
+    }
+    .menu-list li {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    /* 추가된 부분: 스타일 수정 */
+    @media (max-width: 600px) {
+      .sidebar {
+        width: 80%;
+      }
+    }
+
+    //detail
+    .app-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      display: grid;
+    }
+    .box-container {
+      border: 2px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+      position: relative;
+      width: 90%;
+      border-bottom: 1px solid #ccc; /* Add border-bottom for the line */
+    }
+    .course-details {
+      display: flex;
+    }
+    .image-container {
+      margin-right: 20px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .course-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .action-buttons {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-top: 10px;
+    }
+    button {
+      margin-left: 10px;
+    }
+    .instructor-section {
+      margin-top: 20px; /* Add margin-top for the space between the box and the section below */
+    }
+    .reviews-section {
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 20px;
+          p {
+            margin: 0;
+            font-size: 1rem;
+            &:first-child {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    // FOOTER
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      background-color: $lightGreen;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+
+      img {
+        height: 50px;
+      }
+    }
+
+    // HOME
+    .home {
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .card-content {
+          padding: 16px;
+
+          .card-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+
+          .card-description {
+            font-size: 14px;
+            margin-bottom: 16px;
+            color: #666;
+          }
+
+          .card-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: darken(#007bff, 10%);
+            }
+          }
+        }
+      }
+
+      .posts {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+
+        .post {
+          display: flex;
+          gap: 100px;
+
+          &:nth-child(2n + 1) {
+            flex-direction: row-reverse;
+          }
+
+          .img {
+            flex: 2;
+            position: relative;
+
+            &::after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              background-color: $lightGreen;
+              position: absolute;
+              top: 20px;
+              left: -20px;
+              z-index: -1;
+            }
+
+            img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+          }
+
+          .content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+              font-size: 30px;
+            }
+
+            p {
+              font-size: 30px;
+            }
+
+            button {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid teal;
+              color: teal;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $lightGreen;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // SINGLE
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+      }
+
+      .menu {
+        flex: 2;
+      }
+    }
+  }
+}
